@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               sh "aws cloudformation create-stack --stack-name mywindowsstack --template-body file://vpc-sub-sg-rt-ec2_Windows.yaml"
+               sh "aws cloudformation create-stack --stack-name mywindowsstack --template-body file://vpc-sub-sg-rt-ec2_Windows.yaml --parameters MyKeyName=giteepag-keypair"
             }
         }
     }
